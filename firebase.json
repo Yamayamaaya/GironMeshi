@@ -1,0 +1,30 @@
+{
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "hosting": {
+    "source": ".",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "frameworksBackend": {
+      "region": "asia-east1"
+    },
+    "rewrites": [
+      {
+        "regex": "^/menu/([^/]+?)/edit(?:/)?$",
+        "destination": "/menu/[id]/edit.html"
+      },
+      {
+        "regex": "^/waitCard/([^/]+?)(?:/)?$",
+        "destination": "/waitCard/[id].html"
+      },
+      {
+        "regex": "^/waitCard/check/([^/]+?)(?:/)?$",
+        "destination": "/waitCard/check/[id].html"
+      }
+    ]
+  },
+  "storage": {
+    "rules": "storage.rules"
+  }
+}
